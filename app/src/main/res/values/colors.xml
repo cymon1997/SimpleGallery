@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">@color/themePurple</color>
+    <color name="colorPrimaryDark">@color/themeDarkPurple</color>
+    <color name="colorAccent">@color/themeWhite</color>
+
+    <color name="themePurple">#7b1fa2</color>
+    <color name="themeDarkPurple">#4a148c</color>
+    <color name="themeWhite">#ffffff</color>
 </resources>

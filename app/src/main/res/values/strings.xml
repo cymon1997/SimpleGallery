@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Simple Gallery</string>
+    <string name="app_subtitle">Gallery made simple</string>
+
+    <string name="auth_name">Name</string>
+    <string name="auth_email">Email</string>
+    <string name="auth_password">Password</string>
+    <string name="auth_login">Login</string>
+    <string name="help_login">doesn\'t have account?</string>
+    <string name="auth_register">Register</string>
+    <string name="help_register">already have account?</string>
 </resources>

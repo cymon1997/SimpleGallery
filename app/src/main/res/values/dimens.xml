@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="base_font">18sp</dimen>
+    <dimen name="lg_font">24sp</dimen>
+    <dimen name="md_font">20sp</dimen>
+    <dimen name="sm_font">14sp</dimen>
+
+    <dimen name="base_offset">-20dp</dimen>
+    <dimen name="md_offset">-40dp</dimen>
+
+    <dimen name="base_padding">8dp</dimen>
+    <dimen name="md_padding">14dp</dimen>
+
+    <dimen name="splash_logo">320dp</dimen>
+    <dimen name="lg_logo">240dp</dimen>
+</resources>
