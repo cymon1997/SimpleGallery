@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Galeri Sederhana</string>
+    <string name="app_subtitle">Galeri membuat sederhana</string>
+
+    <string name="auth_name">Nama</string>
+    <string name="auth_email">Alamat Surel</string>
+    <string name="auth_password">Kata Sandi</string>
+    <string name="auth_login">Masuk</string>
+    <string name="help_login">tidak punya akun?</string>
+    <string name="auth_register">Daftar</string>
+    <string name="help_register">sudah punya akun?</string>
+</resources>
