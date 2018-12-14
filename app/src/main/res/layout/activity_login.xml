@@ -12,6 +12,14 @@
         android:layout_marginTop="@dimen/md_offset"
         android:src="@drawable/ic_logo"/>
 
+    <TextView
+        android:id="@+id/prompt_error"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/prompt_field_empty"
+        android:textSize="@dimen/sm_font"
+        android:visibility="invisible"/>
+
     <EditText
         android:id="@+id/field_email"
         android:inputType="textEmailAddress"

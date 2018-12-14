@@ -3,7 +3,7 @@ package id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.core;
 import android.arch.lifecycle.MutableLiveData;
 import android.arch.lifecycle.ViewModel;
 
-public class SampleViewModel extends ViewModel implements BaseViewModel<String> {
+public class SampleViewModel extends ViewModel {
     private MutableLiveData<String> sampleData;
 
     public MutableLiveData<String> getInstance() {

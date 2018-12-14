@@ -15,4 +15,9 @@ public class Constant {
     public static final int API_ERROR_NOT_FOUND = 404;
     public static final int API_ERROR_INTERNAL_SERVER = 500;
     public static final int API_ERROR_UNKNOWN = 503;
+
+//    SHARED PREFERENCES
+    public static final String SHARED_PREFERENCES_USERDATA = "USER";
+    public static final String SHARED_PREFERENCES_USERDATA_UID = "USER_UID";
+    public static final String SHARED_PREFERENCES_USERDATA_EMAIL = "USER_EMAIL";
 }

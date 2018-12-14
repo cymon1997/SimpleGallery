@@ -50,7 +50,7 @@ public class FirebaseAPI {
                             receiver.onReceive(Constant.FIREBASE_LOGIN_REQUEST, Constant.API_SUCCESS, getCurrentUser());
                         } else {
                             // Login failed
-                            receiver.onReceive(Constant.FIREBASE_LOGIN_REQUEST, Constant.API_ERROR_UNKNOWN, null);
+                            receiver.onReceive(Constant.FIREBASE_LOGIN_REQUEST, Constant.API_ERROR_NOT_FOUND, null);
                         }
                     }
                 });
