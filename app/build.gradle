@@ -30,6 +30,9 @@ dependencies {
     implementation ("com.google.firebase:firebase-core:$firebaseVersion") {
         exclude group: "com.android.support"
     }
+    implementation ("com.google.firebase:firebase-auth:$firebaseVersion") {
+        exclude group: "com.android.support"
+    }
 
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "com.android.support.test:runner:$runnerVersion"
