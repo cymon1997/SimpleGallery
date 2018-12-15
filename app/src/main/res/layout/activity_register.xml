@@ -46,20 +46,20 @@
 
     <Button
         android:id="@+id/btn_submit"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/lg_logo"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/md_padding"
         android:text="@string/auth_register"
         android:textSize="@dimen/lg_font"
-        android:backgroundTint="@android:color/transparent"/>
+        android:background="?android:attr/selectableItemBackground" />
 
     <Button
         android:id="@+id/btn_help"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/lg_logo"
         android:layout_height="wrap_content"
         android:text="@string/help_register"
         android:textSize="@dimen/sm_font"
         android:textAllCaps="false"
         android:textStyle="normal"
-        android:backgroundTint="@android:color/transparent"/>
+        android:background="?android:attr/selectableItemBackground" />
 </LinearLayout>
