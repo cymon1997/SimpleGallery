@@ -1,6 +1,13 @@
 package id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.common;
 
 public class Constant {
+    public static final String PACKAGE_NAME = "id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery";
+
+//    CONTENT PROVIDER
+    public static final String PROVIDER_TABLE_GALLERY = "gallery";
+    public static final int PROVIDER_TABLE_ALL = 2000;
+    public static final int PROVIDER_TABLE_SINGLE = 2001;
+
     public static final boolean IS_DEBUG_MODE = false;
 
     public static final int APP_SPLASH_DURATION = 3000;

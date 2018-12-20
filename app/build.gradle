@@ -36,10 +36,14 @@ dependencies {
 
     implementation "android.arch.lifecycle:extensions:$archVersion"
     implementation "android.arch.lifecycle:viewmodel:$archVersion"
+    implementation "android.arch.persistence.room:runtime:$archVersion"
+    annotationProcessor "android.arch.lifecycle:compiler:$archVersion"
+    annotationProcessor "android.arch.persistence.room:compiler:$archVersion"
 
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "com.android.support.test:runner:$runnerVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"
+    testImplementation "android.arch.persistence.room:testing:$archVersion"
 }
 
 apply plugin: 'com.google.gms.google-services'
