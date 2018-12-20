@@ -12,6 +12,9 @@
     <string name="help_register">sudah punya akun?</string>
     <string name="auth_logout">Keluar</string>
 
+    <string name="drawer_title">Dasbor</string>
+    <string name="drawer_logout">Keluar</string>
+
     <string name="prompt_field_empty">Harap isi dengan isian yang valid!</string>
 
     <string name="error_unknown">Terjadi Eror! Silahkan coba lagi!</string>
