@@ -4,8 +4,15 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
+import android.support.design.widget.NavigationView;
+import android.support.v4.view.GravityCompat;
+import android.support.v4.widget.DrawerLayout;
+import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Toast;
 
@@ -18,12 +25,14 @@ import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.core.AuthViewMod
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.data.BaseResponse;
 
 public class MainActivity extends AppCompatActivity {
+    private DrawerLayout drawer;
     private AuthViewModel authViewModel;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.layout_drawer);
+        setDrawer();
 
         authViewModel = ViewModelProviders.of(this).get(AuthViewModel.class);
 
@@ -35,14 +44,7 @@ public class MainActivity extends AppCompatActivity {
         };
 
         authViewModel.getInstance().observe(this, authObserver);
-
-        findViewById(R.id.btn_logout).setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                logout();
-            }
-        });
-
+        
         checkData();
     }
 
@@ -73,5 +75,39 @@ public class MainActivity extends AppCompatActivity {
                 errorUnknown();
                 break;
         }
+    }
+
+    private void setDrawer() {
+        drawer = findViewById(R.id.drawer_layout);
+        NavigationView nav = findViewById(R.id.drawer_navigation);
+        nav.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.drawer_logout:
+                        logout();
+                        break;
+                }
+                item.setChecked(true);
+                drawer.closeDrawers();
+                return false;
+            }
+        });
+
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        ActionBar actionBar = getSupportActionBar();
+        actionBar.setDisplayHomeAsUpEnabled(true);
+        actionBar.setHomeAsUpIndicator(R.drawable.ic_action_menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case android.R.id.home:
+                drawer.openDrawer(GravityCompat.START);
+                return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 }

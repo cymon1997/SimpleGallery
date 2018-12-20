@@ -13,4 +13,6 @@
 
     <dimen name="splash_logo">320dp</dimen>
     <dimen name="lg_logo">240dp</dimen>
+
+    <dimen name="drawer_header">192dp</dimen>
 </resources>

@@ -11,6 +11,9 @@
     <string name="help_register">already have account?</string>
     <string name="auth_logout">Logout</string>
 
+    <string name="drawer_title">Dashboard</string>
+    <string name="drawer_logout">Logout</string>
+
     <string name="prompt_field_empty">Please fill with valid data!</string>
 
     <string name="error_unknown">Unknown Error! Please try again!</string>
