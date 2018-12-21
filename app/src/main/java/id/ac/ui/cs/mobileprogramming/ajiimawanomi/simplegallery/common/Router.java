@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 
+import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.DetailActivity;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.LoginActivity;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.MainActivity;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.RegisterActivity;
@@ -22,6 +23,12 @@ public class Router {
 
     public static void gotoRegister(Activity activity) {
         activity.startActivity(new Intent(activity, RegisterActivity.class));
+    }
+
+    public static void gotoDetailImage(Activity activity, String imgUrl) {
+        Intent intent = new Intent(activity, DetailActivity.class);
+        intent.putExtra(DetailActivity.INTENT_IMAGE_URL, imgUrl);
+        activity.startActivity(intent);
     }
 
     public static void gotoTest(Activity activity) {

@@ -20,9 +20,9 @@ public class GalleryFragment extends Fragment {
         GridView grid = root.findViewById(R.id.grid_view);
         String[] data = new String[10];
         for (int i = 0; i < data.length; i++) {
-            data[i] = "https://via.placeholder.com/350x150";
+            data[i] = "https://via.placeholder.com/1920x1280";
         }
-        grid.setAdapter(new ImageAdapter(data));
+        grid.setAdapter(new ImageAdapter(getActivity(), data));
         return root;
     }
 }
