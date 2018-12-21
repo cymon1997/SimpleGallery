@@ -32,7 +32,7 @@ public class LoginHistoryFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_wifi, container, false);
+        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
         grid = root.findViewById(R.id.grid_view);
 
         historyViewModel = ViewModelProviders.of(this).get(LoginHistoryViewModel.class);

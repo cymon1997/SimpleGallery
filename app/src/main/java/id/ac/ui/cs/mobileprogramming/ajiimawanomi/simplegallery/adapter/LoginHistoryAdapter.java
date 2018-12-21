@@ -37,7 +37,7 @@ public class LoginHistoryAdapter extends BaseAdapter {
     public View getView(int position, View convertView, ViewGroup parent) {
         View layout = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_log_history_item, parent, false);
         ((TextView) layout.findViewById(R.id.log_timestamp)).setText(data.get(position).getTimestamp().toString());
-        ((TextView) layout.findViewById(R.id.wifi_strength)).setText(data.get(position).getEmail());
+        ((TextView) layout.findViewById(R.id.log_duration)).setText(data.get(position).getEmail());
         return layout;
     }
 }

@@ -11,7 +11,7 @@ import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.common.Converter
 
 @Entity
 public class LoginLog {
-    @PrimaryKey
+    @PrimaryKey(autoGenerate = true)
     private int uid;
 
     private String email;
