@@ -87,7 +87,7 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
     private void register(String email, String password) {
-        FirebaseAPI.register(this, authViewModel, email, password);
+        authViewModel.register(this, email, password);
     }
 
     private void attempt() {

@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery;
+package id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.fragment;
 
 import android.os.Bundle;
 import android.support.annotation.NonNull;
@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.GridView;
 
+import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.R;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.adapter.ImageAdapter;
 
 public class GalleryFragment extends Fragment {

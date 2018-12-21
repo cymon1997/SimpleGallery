@@ -87,7 +87,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void login(String email, String password) {
-        FirebaseAPI.login(this, authViewModel, email, password);
+        authViewModel.login(this, email, password);
     }
 
     private void attempt() {

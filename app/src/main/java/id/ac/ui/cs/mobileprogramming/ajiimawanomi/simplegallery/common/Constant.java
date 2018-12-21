@@ -1,6 +1,6 @@
 package id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.common;
 
-public class Constant {
+public abstract class Constant {
     public static final String PACKAGE_NAME = "id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery";
 
 //    CONTENT PROVIDER
@@ -8,9 +8,15 @@ public class Constant {
     public static final int PROVIDER_TABLE_ALL = 2000;
     public static final int PROVIDER_TABLE_SINGLE = 2001;
 
+//    ROOM DATABASE
+    public static final String ROOM_DATABASE_LOGIN_LOG = "loginlog";
     public static final boolean IS_DEBUG_MODE = false;
-
     public static final int APP_SPLASH_DURATION = 3000;
+
+//    DATABASE API
+    public static final int DATABASE_LIST_ALL_REQUEST = 3001;
+    public static final int DATABASE_LIST_BY_EMAIL = 3002;
+    public static final int DATABASE_INSERT_REQUEST = 3003;
 
 //    FIREBASE API
     public static final int FIREBASE_LOGIN_REQUEST = 1001;

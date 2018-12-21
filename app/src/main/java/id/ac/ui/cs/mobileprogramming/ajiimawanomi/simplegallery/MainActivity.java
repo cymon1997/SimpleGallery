@@ -4,7 +4,6 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -17,7 +16,6 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
-import android.view.View;
 import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseUser;
@@ -27,12 +25,16 @@ import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.common.Router;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.common.Util;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.core.AuthViewModel;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.data.BaseResponse;
+import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.fragment.GalleryFragment;
+import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.fragment.LoginHistoryFragment;
+import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.fragment.WifiFragment;
 
 public class MainActivity extends AppCompatActivity {
     private final String CURRENT_STATE = "CURRENT_STATE";
     private int state;
     private GalleryFragment galleryFragment;
     private WifiFragment wifiFragment;
+    private LoginHistoryFragment historyFragment;
     private DrawerLayout drawer;
     private AuthViewModel authViewModel;
 
@@ -102,6 +104,10 @@ public class MainActivity extends AppCompatActivity {
                         setFragment(wifiFragment);
                         state = 1;
                         break;
+                    case R.id.drawer_history:
+                        setFragment(historyFragment);
+                        state = 2;
+                        break;
                     case R.id.drawer_logout:
                         logout();
                         break;
@@ -142,12 +148,18 @@ public class MainActivity extends AppCompatActivity {
         if (wifiFragment == null) {
             wifiFragment = new WifiFragment();
         }
+        if (historyFragment == null) {
+            historyFragment = new LoginHistoryFragment();
+        }
         if (savedInstanceState == null) {
             state = 0;
         } else {
             state = savedInstanceState.getInt(CURRENT_STATE, -1);
         }
         switch (state) {
+            case 2:
+                setFragment(historyFragment);
+                break;
             case 1:
                 setFragment(wifiFragment);
                 break;

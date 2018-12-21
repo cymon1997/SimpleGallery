@@ -1,4 +1,4 @@
-package id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery;
+package id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.fragment;
 
 import android.Manifest;
 import android.content.BroadcastReceiver;
@@ -24,6 +24,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
+import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.R;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.adapter.WifiAdapter;
 
 public class WifiFragment extends Fragment {

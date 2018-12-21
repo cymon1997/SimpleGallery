@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/md_padding"
+    android:theme="@style/ThemeNoActionBar"
+    android:background="@color/colorPrimary">
+
+    <ImageView
+        android:id="@+id/log_logo"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary"
+        android:src="@drawable/ic_action_history"/>
+
+    <TextView
+        android:id="@+id/log_timestamp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/log_logo"
+        android:layout_marginStart="@dimen/md_padding"
+        android:background="@color/colorPrimary"
+        android:text="@string/load_data"
+        android:maxLines="1"
+        android:textSize="@dimen/md_font"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:id="@+id/log_duration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toEndOf="@id/log_logo"
+        android:layout_below="@id/log_timestamp"
+        android:layout_marginStart="@dimen/md_padding"
+        android:background="@color/colorPrimary"
+        android:text="@string/load_data"
+        android:textSize="@dimen/sm_font" />
+</RelativeLayout>

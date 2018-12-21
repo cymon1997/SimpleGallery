@@ -17,6 +17,7 @@
     <string name="drawer_title">Dasbor</string>
     <string name="drawer_gallery">Galeri</string>
     <string name="drawer_wifi">Pemindai Wifi</string>
+    <string name="drawer_history">Riwayat Masuk</string>
     <string name="drawer_logout">Keluar</string>
 
     <string name="wifi_signal_good">Bagus</string>

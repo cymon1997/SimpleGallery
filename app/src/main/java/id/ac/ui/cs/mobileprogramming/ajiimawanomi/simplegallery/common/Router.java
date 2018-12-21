@@ -11,7 +11,7 @@ import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.MainActivity;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.RegisterActivity;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.TestActivity;
 
-public class Router {
+public abstract class Router {
 
     public static void gotoMain(Activity activity) {
         activity.startActivity(new Intent(activity, MainActivity.class));
