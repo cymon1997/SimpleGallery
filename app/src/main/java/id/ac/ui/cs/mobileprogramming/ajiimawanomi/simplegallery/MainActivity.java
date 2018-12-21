@@ -4,6 +4,7 @@ import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.PersistableBundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
@@ -28,6 +29,10 @@ import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.core.AuthViewMod
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.data.BaseResponse;
 
 public class MainActivity extends AppCompatActivity {
+    private final String CURRENT_STATE = "CURRENT_STATE";
+    private int state;
+    private GalleryFragment galleryFragment;
+    private WifiFragment wifiFragment;
     private DrawerLayout drawer;
     private AuthViewModel authViewModel;
 
@@ -37,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.layout_drawer);
         setDrawer();
 
-        setFragment(new GalleryFragment());
+        manageFragment(savedInstanceState);
 
         authViewModel = ViewModelProviders.of(this).get(AuthViewModel.class);
 
@@ -89,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
+                    case R.id.drawer_wifi:
+                        setFragment(wifiFragment);
+                        state = 1;
+                        break;
                     case R.id.drawer_logout:
                         logout();
                         break;
@@ -114,6 +123,38 @@ public class MainActivity extends AppCompatActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(CURRENT_STATE, state);
+    }
+
+    private void manageFragment(Bundle savedInstanceState) {
+        if (galleryFragment == null) {
+            galleryFragment = new GalleryFragment();
+        }
+        if (wifiFragment == null) {
+            wifiFragment = new WifiFragment();
+        }
+        if (savedInstanceState == null) {
+            state = 0;
+//            Toast.makeText(getApplicationContext(), "STATE : NULL", Toast.LENGTH_SHORT).show();
+        } else {
+            state = savedInstanceState.getInt(CURRENT_STATE, -1);
+//            Toast.makeText(getApplicationContext(), "STATE : " + state, Toast.LENGTH_SHORT).show();
+        }
+        switch (state) {
+            case 1:
+                setFragment(wifiFragment);
+                break;
+            case 0:
+            default:
+                setFragment(galleryFragment);
+                state = 0;
+                break;
+        }
     }
 
     private void setFragment(Fragment fragment) {

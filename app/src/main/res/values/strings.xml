@@ -2,6 +2,8 @@
     <string name="app_name">Simple Gallery</string>
     <string name="app_subtitle">Gallery made simple</string>
 
+    <string name="load_data">Retrieving data&#8230;</string>
+
     <string name="auth_name">Name</string>
     <string name="auth_email">Email</string>
     <string name="auth_password">Password</string>
@@ -12,6 +14,7 @@
     <string name="auth_logout">Logout</string>
 
     <string name="drawer_title">Dashboard</string>
+    <string name="drawer_wifi">Wifi Scanner</string>
     <string name="drawer_logout">Logout</string>
 
     <string name="prompt_field_empty">Please fill with valid data!</string>

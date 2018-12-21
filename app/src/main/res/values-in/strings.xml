@@ -3,6 +3,8 @@
     <string name="app_name">Galeri Sederhana</string>
     <string name="app_subtitle">Galeri membuat sederhana</string>
 
+    <string name="load_data">Mengambil data&#8230;</string>
+
     <string name="auth_name">Nama</string>
     <string name="auth_email">Alamat Surel</string>
     <string name="auth_password">Kata Sandi</string>
@@ -13,6 +15,7 @@
     <string name="auth_logout">Keluar</string>
 
     <string name="drawer_title">Dasbor</string>
+    <string name="drawer_wifi">Pemindai Wifi</string>
     <string name="drawer_logout">Keluar</string>
 
     <string name="prompt_field_empty">Harap isi dengan isian yang valid!</string>
