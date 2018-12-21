@@ -15,8 +15,12 @@
     <string name="auth_logout">Keluar</string>
 
     <string name="drawer_title">Dasbor</string>
+    <string name="drawer_gallery">Galeri</string>
     <string name="drawer_wifi">Pemindai Wifi</string>
     <string name="drawer_logout">Keluar</string>
+
+    <string name="wifi_signal_good">Bagus</string>
+    <string name="wifi_signal_weak">Lemah</string>
 
     <string name="prompt_field_empty">Harap isi dengan isian yang valid!</string>
 

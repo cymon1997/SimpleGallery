@@ -14,8 +14,12 @@
     <string name="auth_logout">Logout</string>
 
     <string name="drawer_title">Dashboard</string>
+    <string name="drawer_gallery">Gallery</string>
     <string name="drawer_wifi">Wifi Scanner</string>
     <string name="drawer_logout">Logout</string>
+
+    <string name="wifi_signal_good">Fair</string>
+    <string name="wifi_signal_weak">Weak</string>
 
     <string name="prompt_field_empty">Please fill with valid data!</string>
 

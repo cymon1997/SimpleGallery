@@ -21,6 +21,7 @@
         android:layout_marginStart="@dimen/md_padding"
         android:background="@color/colorPrimary"
         android:text="@string/load_data"
+        android:maxLines="1"
         android:textSize="@dimen/md_font"
         android:textStyle="bold"/>
 

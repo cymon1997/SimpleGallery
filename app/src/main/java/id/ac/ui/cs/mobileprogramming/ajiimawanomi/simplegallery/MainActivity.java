@@ -94,6 +94,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()) {
+                    case R.id.drawer_gallery:
+                        setFragment(galleryFragment);
+                        state = 0;
+                        break;
                     case R.id.drawer_wifi:
                         setFragment(wifiFragment);
                         state = 1;
@@ -140,10 +144,8 @@ public class MainActivity extends AppCompatActivity {
         }
         if (savedInstanceState == null) {
             state = 0;
-//            Toast.makeText(getApplicationContext(), "STATE : NULL", Toast.LENGTH_SHORT).show();
         } else {
             state = savedInstanceState.getInt(CURRENT_STATE, -1);
-//            Toast.makeText(getApplicationContext(), "STATE : " + state, Toast.LENGTH_SHORT).show();
         }
         switch (state) {
             case 1:

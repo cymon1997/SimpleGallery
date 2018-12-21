@@ -45,13 +45,13 @@ public class WifiAdapter extends BaseAdapter {
             case 0:
             case 1:
             case 2:
-                signal = "Weak";
+                signal = parent.getContext().getResources().getString(R.string.wifi_signal_weak);
                 logo = parent.getContext().getResources().getDrawable(R.drawable.ic_action_wifi_off);
                 break;
             case 3:
             case 4:
             default:
-                signal = "Fair";
+                signal = parent.getContext().getResources().getString(R.string.wifi_signal_good);
                 logo = parent.getContext().getResources().getDrawable(R.drawable.ic_action_wifi);
                 break;
         }
