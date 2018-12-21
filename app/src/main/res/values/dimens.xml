@@ -9,10 +9,12 @@
     <dimen name="md_offset">-40dp</dimen>
 
     <dimen name="base_padding">8dp</dimen>
+    <dimen name="xs_padding">4dp</dimen>
     <dimen name="md_padding">14dp</dimen>
 
     <dimen name="splash_logo">320dp</dimen>
     <dimen name="lg_logo">240dp</dimen>
 
     <dimen name="drawer_header">192dp</dimen>
+    <dimen name="image_item">260dp</dimen>
 </resources>

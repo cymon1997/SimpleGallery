@@ -41,6 +41,8 @@ dependencies {
     annotationProcessor "android.arch.lifecycle:compiler:$archVersion"
     annotationProcessor "android.arch.persistence.room:compiler:$archVersion"
 
+    implementation "com.squareup.picasso:picasso:$picassoVersion"
+
     testImplementation "junit:junit:$junitVersion"
     androidTestImplementation "com.android.support.test:runner:$runnerVersion"
     androidTestImplementation "com.android.support.test.espresso:espresso-core:$espressoVersion"
