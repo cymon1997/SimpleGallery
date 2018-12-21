@@ -5,12 +5,16 @@ buildscript {
     repositories {
         google()
         jcenter()
+        maven {
+            url 'https://maven.fabric.io/public'
+        }
     }
     dependencies {
         //noinspection GradleDependency
         classpath 'com.android.tools.build:gradle:3.1.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath 'com.google.gms:google-services:4.2.0'
+        classpath 'io.fabric.tools:gradle:1.26.1'
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
@@ -20,6 +24,9 @@ allprojects {
     repositories {
         google()
         jcenter()
+        maven {
+            url 'https://maven.google.com/'
+        }
     }
 }
 
@@ -30,6 +37,7 @@ task clean(type: Delete) {
 ext {
     supportVersion = '27.1.1'
     firebaseVersion = '16.0.1'
+    crashlyticsVersion = '2.9.7'
     archVersion = '1.1.1'
     picassoVersion = '2.71828'
     junitVersion = '4.12'
