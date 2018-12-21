@@ -56,7 +56,7 @@ public class WifiFragment extends Fragment {
         };
 
         if (!wifiManager.isWifiEnabled()) {
-            Toast.makeText(getContext(), "WIFI NOT ENABLED!", Toast.LENGTH_SHORT).show();
+            Toast.makeText(getContext(), getContext().getResources().getString(R.string.wifi_enable), Toast.LENGTH_SHORT).show();
             wifiManager.setWifiEnabled(true);
         }
 

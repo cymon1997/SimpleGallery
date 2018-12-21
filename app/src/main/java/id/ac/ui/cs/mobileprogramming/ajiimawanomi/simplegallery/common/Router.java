@@ -11,6 +11,8 @@ import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.MainActivity;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.RegisterActivity;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.TestActivity;
 
+import static android.content.Context.MODE_PRIVATE;
+
 public abstract class Router {
 
     public static void gotoMain(Activity activity) {
@@ -43,8 +45,28 @@ public abstract class Router {
     }
 
     public static void clearData(Activity activity) {
-        SharedPreferences.Editor editor = activity.getSharedPreferences(Constant.SHARED_PREFERENCES_USERDATA, Context.MODE_PRIVATE).edit();
-        editor.clear();
+        SharedPreferences.Editor auth = activity.getSharedPreferences(Constant.SHARED_PREFERENCES_USERDATA, Context.MODE_PRIVATE).edit();
+        auth.clear();
+        auth.apply();
+        SharedPreferences.Editor setting = activity.getSharedPreferences(Constant.SHARED_PREFERENCES_SAFE_MODE, Context.MODE_PRIVATE).edit();
+        setting.clear();
+        setting.apply();
+    }
+
+    public static void safeModeActivate(Context context) {
+        SharedPreferences.Editor editor = context.getSharedPreferences(Constant.SHARED_PREFERENCES_SAFE_MODE, Context.MODE_PRIVATE).edit();
+        editor.putBoolean(Constant.SHARED_PREFERENCES_SAFE_MODE_STATUS, true);
         editor.apply();
+    }
+
+    public static void safeModeDeactivate(Context context) {
+        SharedPreferences.Editor editor = context.getSharedPreferences(Constant.SHARED_PREFERENCES_SAFE_MODE, Context.MODE_PRIVATE).edit();
+        editor.putBoolean(Constant.SHARED_PREFERENCES_SAFE_MODE_STATUS, false);
+        editor.apply();
+    }
+
+    public static boolean safeModeStatus(Context context) {
+        SharedPreferences preferences = context.getSharedPreferences(Constant.SHARED_PREFERENCES_SAFE_MODE, MODE_PRIVATE);
+        return preferences.getBoolean(Constant.SHARED_PREFERENCES_SAFE_MODE_STATUS, false);
     }
 }

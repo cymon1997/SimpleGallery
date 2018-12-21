@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:theme="@style/ThemeDark"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+
+    <ImageView
+        android:id="@+id/safe_logo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_logo_safe_mode"
+        android:alpha="0.1"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/drawer_safe_mode"
+        android:textSize="@dimen/lg_font"
+        android:textStyle="bold"
+        android:textAllCaps="true"/>
+
+    <Button
+        android:id="@+id/btn_toggle"
+        android:layout_width="@dimen/lg_logo"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/lg_font"
+        android:text="@string/safe_activate"
+        android:textSize="@dimen/lg_font"
+        android:background="?android:attr/selectableItemBackground"/>
+</LinearLayout>

@@ -10,6 +10,10 @@
             android:icon="@drawable/ic_action_wifi"
             android:title="@string/drawer_wifi" />
         <item
+            android:id="@+id/drawer_safe_mode"
+            android:icon="@drawable/ic_action_save_mode"
+            android:title="@string/drawer_safe_mode"/>
+        <item
             android:id="@+id/drawer_history"
             android:icon="@drawable/ic_action_history"
             android:title="@string/drawer_history"/>

@@ -16,13 +16,21 @@
     <string name="drawer_title">Dashboard</string>
     <string name="drawer_gallery">Gallery</string>
     <string name="drawer_wifi">Wifi Scanner</string>
+    <string name="drawer_safe_mode">Safe Mode</string>
     <string name="drawer_history">Login History</string>
     <string name="drawer_logout">Logout</string>
 
+    <string name="wifi_enable">Enabling WiFi&#8230;</string>
     <string name="wifi_signal_good">Fair</string>
     <string name="wifi_signal_weak">Weak</string>
 
+    <string name="safe_activate">Activate</string>
+    <string name="safe_deactivate">Deactivate</string>
+
+    <string name="prompt_safe_activate">Activating safe mode&#8230;</string>
+    <string name="prompt_safe_deactivate">Deactivating safe mode&#8230;</string>
     <string name="prompt_field_empty">Please fill with valid data!</string>
+    <string name="prompt_blocked_ssid">Unauthorized WiFi! Disconnecting&#8230;</string>
 
     <string name="error_unknown">Unknown Error! Please try again!</string>
     <string name="error_not_registered">Please register your account first!</string>

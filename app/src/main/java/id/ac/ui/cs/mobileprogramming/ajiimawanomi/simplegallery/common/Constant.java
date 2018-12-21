@@ -33,4 +33,7 @@ public abstract class Constant {
     public static final String SHARED_PREFERENCES_USERDATA = "USER";
     public static final String SHARED_PREFERENCES_USERDATA_UID = "USER_UID";
     public static final String SHARED_PREFERENCES_USERDATA_EMAIL = "USER_EMAIL";
+
+    public static final String SHARED_PREFERENCES_SAFE_MODE = "SAFE_MODE";
+    public static final String SHARED_PREFERENCES_SAFE_MODE_STATUS = "SAFE_MODE_STATUS";
 }

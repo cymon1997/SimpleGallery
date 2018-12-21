@@ -27,6 +27,7 @@ import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.core.AuthViewMod
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.data.BaseResponse;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.fragment.GalleryFragment;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.fragment.LoginHistoryFragment;
+import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.fragment.SafeModeFragment;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.fragment.WifiFragment;
 
 public class MainActivity extends AppCompatActivity {
@@ -34,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private int state;
     private GalleryFragment galleryFragment;
     private WifiFragment wifiFragment;
+    private SafeModeFragment safeModeFragment;
     private LoginHistoryFragment historyFragment;
     private DrawerLayout drawer;
     private AuthViewModel authViewModel;
@@ -108,6 +110,10 @@ public class MainActivity extends AppCompatActivity {
                         setFragment(historyFragment);
                         state = 2;
                         break;
+                    case R.id.drawer_safe_mode:
+                        setFragment(safeModeFragment);
+                        state = 3;
+                        break;
                     case R.id.drawer_logout:
                         logout();
                         break;
@@ -147,6 +153,9 @@ public class MainActivity extends AppCompatActivity {
         }
         if (wifiFragment == null) {
             wifiFragment = new WifiFragment();
+        }
+        if (safeModeFragment == null) {
+            safeModeFragment = new SafeModeFragment();
         }
         if (historyFragment == null) {
             historyFragment = new LoginHistoryFragment();
