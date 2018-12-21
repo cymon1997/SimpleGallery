@@ -39,11 +39,14 @@ dependencies {
     implementation ("com.google.firebase:firebase-core:$firebaseVersion") {
         exclude group: "com.android.support"
     }
-    implementation ("com.google.firebase:firebase-auth:$firebaseVersion") {
+    implementation ("com.google.firebase:firebase-auth:$firebaseAuthVersion") {
         exclude group: "com.android.support"
     }
     implementation ("com.crashlytics.sdk.android:crashlytics:$crashlyticsVersion") {
         transitive = true;
+    }
+    implementation ("com.google.android.gms:play-services-ads:$adsVersion") {
+        exclude group: "com.google.android.gms", module: "play-services-stats"
     }
 
     implementation "android.arch.lifecycle:extensions:$archVersion"

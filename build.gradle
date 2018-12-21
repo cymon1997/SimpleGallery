@@ -4,10 +4,10 @@ buildscript {
     ext.kotlin_version = '1.2.30'
     repositories {
         google()
-        jcenter()
         maven {
             url 'https://maven.fabric.io/public'
         }
+        jcenter()
     }
     dependencies {
         //noinspection GradleDependency
@@ -23,10 +23,10 @@ buildscript {
 allprojects {
     repositories {
         google()
-        jcenter()
         maven {
             url 'https://maven.google.com/'
         }
+        jcenter()
     }
 }
 
@@ -36,8 +36,11 @@ task clean(type: Delete) {
 
 ext {
     supportVersion = '27.1.1'
-    firebaseVersion = '16.0.1'
+    firebaseVersion = '16.0.6'
+    firebaseAuthVersion = '16.1.0'
     crashlyticsVersion = '2.9.7'
+    adsVersion = '17.1.2'
+    googlePlayServicesVersion = '15.0.1'
     archVersion = '1.1.1'
     picassoVersion = '2.71828'
     junitVersion = '4.12'
