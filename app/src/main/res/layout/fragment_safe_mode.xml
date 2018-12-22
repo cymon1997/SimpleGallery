@@ -13,6 +13,14 @@
         android:src="@drawable/ic_logo_safe_mode"
         android:alpha="0.1"/>
 
+    <LinearLayout
+        android:id="@+id/surface_container"
+        android:layout_width="@dimen/lg_logo"
+        android:layout_height="@dimen/md_surface"
+        android:layout_marginTop="@dimen/base_offset"
+        android:layout_marginBottom="@dimen/base_padding"
+        android:orientation="vertical"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

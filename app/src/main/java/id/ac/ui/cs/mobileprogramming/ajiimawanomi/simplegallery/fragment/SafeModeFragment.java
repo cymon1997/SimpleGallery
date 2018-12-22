@@ -10,6 +10,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.R;
@@ -18,6 +20,7 @@ import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.common.Router;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.common.Util;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.core.SafeModeViewModel;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.data.BaseResponse;
+import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.ui.SimpleSurfaceView;
 
 public class SafeModeFragment extends Fragment {
     private SafeModeViewModel safeViewModel;
@@ -39,6 +42,7 @@ public class SafeModeFragment extends Fragment {
 
         safeViewModel.getInstance().observe(this, safeObserver);
 
+        ((LinearLayout) root.findViewById(R.id.surface_container)).addView(new SimpleSurfaceView(getContext()));
         root.findViewById(R.id.btn_toggle).setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
