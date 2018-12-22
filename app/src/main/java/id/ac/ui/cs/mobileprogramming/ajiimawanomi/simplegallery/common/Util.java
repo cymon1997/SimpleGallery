@@ -16,7 +16,7 @@ public abstract class Util {
 
     public static boolean isBlocked(String ssid) {
         ssid = ssid.replace("\"", "");
-        String[] secured = new String[]{ "jangan hot" };
+        String[] secured = new String[]{ "HotSpot - UI", "HotSpot - UI (NEW)" };
         boolean blocked = true;
         for (String i : secured) {
 //            Log.d("SSID IS BLOCKED", " : ["+ ssid +"] ["+ i +"] THEN [" + i.equals(ssid) + "]");
