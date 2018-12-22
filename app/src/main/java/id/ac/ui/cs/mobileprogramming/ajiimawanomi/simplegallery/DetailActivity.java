@@ -1,6 +1,8 @@
 package id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.ActionBar;
@@ -32,7 +34,17 @@ public class DetailActivity extends AppCompatActivity {
             imgUrl = "https://via.placeholder.com/640x320";
         }
         ImageView imageView = findViewById(R.id.image_item);
-        Picasso.get().load(imgUrl).into(imageView);
+        loadFromPath(imageView, imgUrl);
+//        loadFromSource(imageView, imgUrl);
+    }
+
+    private void loadFromPath(ImageView target, String path) {
+        Bitmap bitmap = BitmapFactory.decodeFile(path);
+        target.setImageBitmap(bitmap);
+    }
+
+    private void loadFromSource(ImageView target, String url) {
+        Picasso.get().load(url).into(target);
     }
 
     private void setActionBar() {
