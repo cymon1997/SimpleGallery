@@ -3,6 +3,11 @@ package id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.common;
 public abstract class Constant {
     public static final String PACKAGE_NAME = "id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery";
 
+//    PERMISSION
+    public static final int PERMISSION_ACCESS_WIFI_STATE_REQUEST = 4001;
+    public static final int PERMISSION_CHANGE_WIFI_STATE_REQUEST = 4002;
+    public static final int PERMISSION_READ_EXTERNAL_STORAGE_REQUEST = 4003;
+
 //    CONTENT PROVIDER
     public static final String PROVIDER_TABLE_GALLERY = "gallery";
     public static final int PROVIDER_TABLE_ALL = 2000;
@@ -25,6 +30,7 @@ public abstract class Constant {
 
 //    HTTP RESULT
     public static final int API_SUCCESS = 200;
+    public static final int API_ERROR_PERMISSION_DENIED = 403;
     public static final int API_ERROR_NOT_FOUND = 404;
     public static final int API_ERROR_INTERNAL_SERVER = 500;
     public static final int API_ERROR_UNKNOWN = 503;

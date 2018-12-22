@@ -26,8 +26,10 @@ import java.util.List;
 
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.R;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.adapter.WifiAdapter;
+import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.common.Constant;
+import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.core.ResponseReceiver;
 
-public class WifiFragment extends Fragment {
+public class WifiFragment extends Fragment implements ResponseReceiver {
     private GridView grid;
     private WifiManager wifiManager;
     private BroadcastReceiver receiver;
@@ -45,10 +47,17 @@ public class WifiFragment extends Fragment {
                 boolean success = intent.getBooleanExtra(WifiManager.EXTRA_RESULTS_UPDATED, true);
                 if (success) {
                     if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.ACCESS_WIFI_STATE) != PackageManager.PERMISSION_GRANTED) {
-                        ActivityCompat.requestPermissions(getActivity(),
-                                new String[]{Manifest.permission.ACCESS_WIFI_STATE}, 1);
+                        if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.ACCESS_WIFI_STATE)) {
+                            // Do nothing
+                        } else {
+                            ActivityCompat.requestPermissions(getActivity(),
+                                    new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, Constant.PERMISSION_READ_EXTERNAL_STORAGE_REQUEST);
+                        }
+                    } else {
+                        // Do Action
+                        scanSuccess(wifiManager.getScanResults());
                     }
-                    scanSuccess(wifiManager.getScanResults());
+
                 } else {
                     scanFailure();
                 }
@@ -65,17 +74,27 @@ public class WifiFragment extends Fragment {
         getContext().getApplicationContext().registerReceiver(receiver, filter);
 
         if (ContextCompat.checkSelfPermission(getContext(), Manifest.permission.CHANGE_WIFI_STATE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(getActivity(),
-                    new String[]{Manifest.permission.CHANGE_WIFI_STATE}, 2);
+            if (ActivityCompat.shouldShowRequestPermissionRationale(getActivity(), Manifest.permission.CHANGE_WIFI_STATE)) {
+                // Do nothing
+            } else {
+                ActivityCompat.requestPermissions(getActivity(),
+                        new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, Constant.PERMISSION_READ_EXTERNAL_STORAGE_REQUEST);
+            }
+        } else {
+            // Do Action
+            attempt();
         }
 
+
+        grid.setAdapter(new WifiAdapter(new ArrayList<ScanResult>()));
+        return root;
+    }
+
+    private void attempt() {
         boolean success = wifiManager.startScan();
         if (!success) {
             scanFailure();
         }
-
-        grid.setAdapter(new WifiAdapter(new ArrayList<ScanResult>()));
-        return root;
     }
 
     private void scanSuccess(List<ScanResult> results) {
@@ -115,5 +134,29 @@ public class WifiFragment extends Fragment {
     public void onDestroy() {
         getContext().getApplicationContext().unregisterReceiver(receiver);
         super.onDestroy();
+    }
+
+    private void errorPermission() {
+        Toast.makeText(getContext(), getResources().getString(R.string.prompt_permission_denied), Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onReceive(int requestCode, int resultCode, Object response) {
+        switch (requestCode) {
+            case Constant.PERMISSION_ACCESS_WIFI_STATE_REQUEST:
+                if (resultCode == Constant.API_SUCCESS) {
+                    scanSuccess(wifiManager.getScanResults());
+                } else {
+                    errorPermission();
+                }
+                break;
+            case Constant.PERMISSION_CHANGE_WIFI_STATE_REQUEST:
+                if (resultCode == Constant.API_SUCCESS) {
+                    attempt();
+                } else {
+                    errorPermission();
+                }
+                break;
+        }
     }
 }

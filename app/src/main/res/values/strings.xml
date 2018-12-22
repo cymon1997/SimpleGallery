@@ -31,7 +31,9 @@
     <string name="prompt_safe_deactivate">Deactivating safe mode&#8230;</string>
     <string name="prompt_field_empty">Please fill with valid data!</string>
     <string name="prompt_blocked_ssid">Unauthorized WiFi! Disconnecting&#8230;</string>
+    <string name="prompt_permission_denied">Please grant the permission!</string>
 
+    <string name="error_empty">Whoops! It\'s nothing here.</string>
     <string name="error_unknown">Unknown Error! Please try again!</string>
     <string name="error_not_registered">Please register your account first!</string>
     <string name="error_already_registered">User already registered! Please login instead!</string>

@@ -1,6 +1,8 @@
 package id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.adapter;
 
 import android.app.Activity;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +42,8 @@ public class ImageAdapter extends BaseAdapter {
     public View getView(final int position, View convertView, ViewGroup parent) {
         View layout = LayoutInflater.from(parent.getContext()).inflate(R.layout.layout_image_item, parent, false);
         ImageView imageView = layout.findViewById(R.id.image_item);
-        Picasso.get().load(data[position]).into(imageView);
+//        loadFromSource(imageView, data[position]);
+        loadFromPath(imageView, data[position]);
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +51,15 @@ public class ImageAdapter extends BaseAdapter {
             }
         });
         return layout;
+    }
+
+    private void loadFromPath(ImageView target, String path) {
+        Bitmap bitmap = BitmapFactory.decodeFile(path);
+        target.setImageBitmap(bitmap);
+    }
+
+    private void loadFromSource(ImageView target, String url) {
+        Picasso.get().load(url).into(target);
     }
 
     private void openImage(String imgUrl) {

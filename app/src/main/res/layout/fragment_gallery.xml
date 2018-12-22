@@ -5,6 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/error_empty"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:text="@string/error_empty"
+        android:textSize="@dimen/md_font"
+        android:textColor="@color/colorPrimaryDark"
+        android:visibility="gone"/>
+
     <GridView
         android:id="@+id/grid_view"
         android:layout_width="match_parent"

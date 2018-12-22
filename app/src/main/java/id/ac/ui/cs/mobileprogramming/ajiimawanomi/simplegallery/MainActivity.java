@@ -3,6 +3,7 @@ package id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery;
 import android.arch.lifecycle.Observer;
 import android.arch.lifecycle.ViewModelProviders;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -24,6 +25,7 @@ import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.common.Constant;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.common.Router;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.common.Util;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.core.AuthViewModel;
+import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.core.ResponseReceiver;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.data.BaseResponse;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.fragment.GalleryFragment;
 import id.ac.ui.cs.mobileprogramming.ajiimawanomi.simplegallery.fragment.LoginHistoryFragment;
@@ -186,5 +188,32 @@ public class MainActivity extends AppCompatActivity {
         transaction.replace(R.id.fragment_container, fragment);
         transaction.addToBackStack(null);
         transaction.commit();
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        switch (requestCode) {
+            case Constant.PERMISSION_ACCESS_WIFI_STATE_REQUEST:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    ((ResponseReceiver) wifiFragment).onReceive(requestCode, Constant.API_SUCCESS, null);
+                } else {
+                    ((ResponseReceiver) wifiFragment).onReceive(requestCode, Constant.API_ERROR_PERMISSION_DENIED, null);
+                }
+                break;
+            case Constant.PERMISSION_CHANGE_WIFI_STATE_REQUEST:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    ((ResponseReceiver) wifiFragment).onReceive(requestCode, Constant.API_SUCCESS, null);
+                } else {
+                    ((ResponseReceiver) wifiFragment).onReceive(requestCode, Constant.API_ERROR_PERMISSION_DENIED, null);
+                }
+                break;
+            case Constant.PERMISSION_READ_EXTERNAL_STORAGE_REQUEST:
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    ((ResponseReceiver) galleryFragment).onReceive(requestCode, Constant.API_SUCCESS, null);
+                } else {
+                    ((ResponseReceiver) galleryFragment).onReceive(requestCode, Constant.API_ERROR_PERMISSION_DENIED, null);
+                }
+                break;
+        }
     }
 }

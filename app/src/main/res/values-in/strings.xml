@@ -28,10 +28,12 @@
     <string name="safe_activate">Aktifkan</string>
     <string name="safe_deactivate">Matikan</string>
 
+    <string name="error_empty">Wah! Tidak ada konten.</string>
     <string name="prompt_safe_activate">Menyalakan mode aman&#8230;</string>
     <string name="prompt_safe_deactivate">Menonaktifkan mode aman&#8230;</string>
     <string name="prompt_field_empty">Harap isi dengan isian yang valid!</string>
     <string name="prompt_blocked_ssid">WiFi tidak aman! Memutuskan&#8230;</string>
+    <string name="prompt_permission_denied">Harap memberi akses permisi!</string>
 
     <string name="error_unknown">Terjadi Eror! Silahkan coba lagi!</string>
     <string name="error_not_registered">Silahkan daftarkan akun Anda terlebih dulu!</string>
